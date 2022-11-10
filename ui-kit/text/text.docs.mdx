@@ -1,0 +1,115 @@
+---
+description: A Text component.
+---
+
+import { Text } from './text'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyles, theme } from '@egssistemas/ui-kit.theme'
+import { CheckMarkFilled } from '@egssistemas/icons.icons'
+
+Componente de texto.
+
+## Uso do componente
+
+```js
+<Text>Hello world!</Text>
+```
+
+### Render hello world!
+
+```js live
+<ThemeProvider theme={theme}>
+  <Text size="xxs">Hello world!</Text>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Text size="xs">Hello world!</Text>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Text size="sm">Hello world!</Text>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Text size="md">Hello world!</Text>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Text color="primary" size="md">
+    Hello world!
+  </Text>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Text color="secondary" size="md">
+    Hello world!
+  </Text>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Text color="title" size="md">
+    Hello world!
+  </Text>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Text titleTheme size="md">
+    Hello world!
+  </Text>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Text size="lg">Hello world!</Text>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Text size="xl">Hello world!</Text>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Text size="2xl">Hello world!</Text>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Text size="xl">
+    <CheckMarkFilled />
+    With Icon!
+  </Text>
+</ThemeProvider>
+```
+
+## Props
+
+Componente Modal possui algumas props para modificação.
+
+| Prop           | type                                               |
+| -------------- | -------------------------------------------------- |
+| **Size**       | sm - md - lg                                       |
+| **align**      | center - left - right - justify                    |
+| **weigth**     | light - normal - bold                              |
+| **color**      | title - text - primary - secondary - white - black |
+| **component**  | span - h1 - h2 - h3 - h4 - h5 - h6 - p             |
+| **transform**  | capitalize - lowercase - uppercase                 |
+| **titleTheme** | boolean                                            |
