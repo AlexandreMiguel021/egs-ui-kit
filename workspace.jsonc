@@ -1,0 +1,49 @@
+{
+  "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
+  "teambit.workspace/workspace": {
+    "name": "egssistemas-ui-kit",
+    "icon": "https://static.bit.dev/bit-logo.svg",
+    "defaultDirectory": "{scope}/{name}",
+    "defaultScope": "egssistemas.ui-kit"
+  },
+  "teambit.dependencies/dependency-resolver": {
+    "packageManager": "teambit.dependencies/pnpm",
+    "policy": {
+      "dependencies": {
+        "@egssistemas/utils.mask": "0.0.2",
+        "@headlessui/react": "1.7.4",
+        "@radix-ui/react-dialog": "1.0.2",
+        "@teambit/eslint-config-bit-react": "~0.0.367",
+        "@testing-library/user-event": "14.4.3",
+        "@types/jest": "^29.2.2",
+        "@types/react": "18.0.24",
+        "@types/react-dom": "18.0.8",
+        "@types/styled-components": "5.1.26",
+        "@types/testing-library__jest-dom": "5.14.5",
+        "@typescript-eslint/eslint-plugin": "4.29.3",
+        "eslint-import-resolver-node": "0.3.6",
+        "eslint-plugin-import": "2.22.1",
+        "eslint-plugin-jest": "24.4.0",
+        "eslint-plugin-jsx-a11y": "6.4.1",
+        "eslint-plugin-mdx": "1.15.0",
+        "eslint-plugin-react": "7.31.10",
+        "jest-styled-components": "7.1.1",
+        "react": "18.2.0",
+        "styled-components": "5.3.6",
+        "styled-media-query": "2.1.2"
+      },
+      "peerDependencies": {
+        "@testing-library/react": "^13.4.0",
+        "react": "18.2.0",
+        "react-hook-form": "7.39.1",
+        "react-dom": "18.2.0"
+      }
+    },
+    "linkCoreAspects": true
+  },
+  "teambit.workspace/variants": {
+    "design": {
+      "teambit.react/react": {}
+    }
+  }
+}
