@@ -1,0 +1,71 @@
+---
+description: A Form component.
+---
+
+import { Form } from './form'
+
+O Componente Form funciona como um Wrapper além de ser um formProvider e não possui nenhum estilo.
+
+## Uso do componente
+
+Para começar a utilizar, primeiro importamos "useForm" de react-hook-form e pegamos o valor do hook "useForm" e atribuimos a constante "methods".
+
+Methods contém todas as funções e valores que serão utilizadas pelo componente Form, no qual passaremos por props.
+
+OnSubmit é a função que recebe os valores dos inputs que estão em form.
+
+A função submit é chamada quando o formúlario é enviado.
+
+```js
+import { useForm } from 'react-hook-form'
+
+function Component(params) {
+  const methods = useform()
+
+  function submit(values) {
+    console.log(values)
+  }
+
+  return (
+    <Form methods={methods} onSubmit={submit}>
+      ...
+      <Button>submit</Button>
+    </Form>
+  )
+}
+```
+
+### Exemplo com componente TextField e com validações
+
+Dentro de useForm você tem acesso a funções como resolver, mode, etc...
+
+Em resolver é passado é passado o tipo de resolver, no caso yupResolver juntamente com o "schema" de validação.
+
+Como o componente de TextField já trabalha com os valores de forma automatizada, você não precisa em se preocupar em mostrar o erro caso haja, ou lidar com a máscara do valor, pois tudo isso já é feito dentro do componente de TextField, o mesmo serve para outros componetes de inputs dessa lib.
+
+```js
+import { useForm } from 'react-hook-form'
+import { TextField } from '@egssistemas/ui-kit.TextField'
+import { yupResolver } from '@hookform/resolvers/yup'
+
+const schema = yup.object({
+  phone: yup.string().required('Telefone é obrigatório')
+})
+
+function Component(params) {
+  const methods = useform({
+    resolver: yupResolver(schema)
+  })
+
+  function submit(values) {
+    console.log(values)
+  }
+
+  return (
+    <Form methods={methods} onSubmit={submit}>
+      <TextField label="telefone" name="phone" mask="(99) 99999-9999" />
+      <Button>submit</Button>
+    </Form>
+  )
+}
+```
