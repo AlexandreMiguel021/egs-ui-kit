@@ -1,0 +1,43 @@
+---
+description: A Textfield component.
+---
+
+import { Textfield } from './textfield'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyles, theme } from '@egssistemas/ui-kit.theme'
+import { Form } from '@egssistemas/ui-kit.form'
+import { useForm } from 'react-hook-form'
+
+Componente de Textfield.
+
+## Uso do Componente
+
+Para utilizar o componente basta passar **name** que é obrigatório para o funcionamento do componente e seu label.
+
+```js
+<Textfield name="name" label="Nome:*" />
+```
+
+Caso queira aplicar uma máscara no valor no input a ser digitado, basta passar a máscara para a props **mask**.
+
+```js
+<Textfield name="name" label="Name:*" mask="999.999.999-99" />
+```
+
+Componente Textfield só funciona dentro do componente **Form**, pois TextField faz o uso do contexto do Formulário, como no exemplo abaixo:
+
+```js
+import { useForm } from 'react-hook-form'
+import { Form } from '@egssistemas/ui-kit.form'
+import { TextField } from '@egssistemas/ui-kit.textfield'
+
+function Formulario() {
+  const methods = useForm()
+
+  return (
+    <Form methods={methods} onSubmit={func}>
+      <Textfield name="cpf" label="CPF:*" mask="999.999.999-99" />
+    </Form>
+  )
+}
+```
