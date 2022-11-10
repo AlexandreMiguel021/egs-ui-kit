@@ -1,0 +1,109 @@
+---
+description: A Button component.
+---
+
+import { Button } from './button'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyles, theme } from '@egssistemas/ui-kit.theme'
+import { CheckMarkFilled } from '@egssistemas/icons.icons'
+
+Componente de botão.
+
+Ao passar href para o componente Button, ele será renderizado como um componente "anchor" no html.
+
+```js
+<Button href="/page">Hello world!</Button>
+```
+
+No Next.js para ter o benifício do roteamento você pode envolver o componente "Button" com o componente "Link".
+
+```js
+<Link href="/page" passHref>
+  <Button>Hello world!</Button>
+</Link>
+```
+
+---
+
+> ❕ **info:** Em dispositivos menores que 768px, o botão tem o tamanho padrão _sm_.
+
+## Uso do componente
+
+```js
+<Button>Hello world!</Button>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Button>Hello world!</Button>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Button primary>Hello world!</Button>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Button secondary>Hello world!</Button>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Button outline>Hello world!</Button>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Button gradient>Hello world!</Button>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Button gradient>
+    <CheckMarkFilled />
+    Hello world!
+  </Button>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Button sm gradient>
+    Hello world!
+  </Button>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Button md gradient>
+    Hello world!
+  </Button>
+</ThemeProvider>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <Button lg gradient>
+    Hello world!
+  </Button>
+</ThemeProvider>
+```
+
+## Props
+
+Componente Botão possui algumas props para modificação.
+
+| Prop          | type    |
+| ------------- | ------- |
+| **primary**   | boolean |
+| **secondary** | boolean |
+| **outline**   | boolean |
+| **gradient**  | boolean |
+| **fullWidth** | boolean |
