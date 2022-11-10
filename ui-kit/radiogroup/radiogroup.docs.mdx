@@ -1,0 +1,40 @@
+---
+description: A Radiogroup component.
+---
+
+import { RadioGroup } from './radiogroup'
+
+Componente RadioGroup
+
+### Uso do componente
+
+RadioGroup recebe um array contendo text e value, text é o valor visível pelo usuario e value é o valor que é enviado
+
+```js
+<Form>
+  <RadioGroup
+    name="values"
+    label="values:*"
+    values={[
+      { text: 'value 1', value: 1 },
+      { text: 'value 2', value: 2 }
+    ]}
+  />
+</Form>
+```
+
+Caso queira que o radio group fique em linhas e não separado em colunas, basta passar a props "wrap", para que o radio tenha 100% de width e quebra a linha
+
+```js
+<Form>
+  <RadioGroup
+    name="values"
+    label="values:*"
+    wrap
+    values={[
+      { text: 'value 1', value: 1 },
+      { text: 'value 2', value: 2 }
+    ]}
+  />
+</Form>
+```
