@@ -1,0 +1,22 @@
+---
+description: A Inputerror component.
+---
+
+import { InputError } from './inputerror'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyles, theme } from '@egssistemas/ui-kit.theme'
+
+Componte base para feedback de erro para inputs como **TextField**
+
+## Uso do componente
+
+```js
+<InputError>mensagem de erro</InputError>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <GlobalStyles />
+  <InputError error={true}>mensagem de erro</InputError>
+</ThemeProvider>
+```
