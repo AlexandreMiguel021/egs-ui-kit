@@ -1,0 +1,58 @@
+---
+description: Componente de Modal.
+---
+
+import { Modal } from './modal'
+
+## Uso do componente
+
+Componente de modal seguindo padrão de componentes compostos (Um padrão que possibilita a criação de componentes expressivos e declarativos, evitando a perfuração de props.)
+
+Modal já vem estilizado por padrão seguindo o tema que é passado pelo "theme provider" do styled-components.
+
+O Exemplo a seguir é a maneira mais básica de utilizar. <br/>
+
+**Modal.Root** - Contém todas as partes de um Modal. <br/>
+
+**Modal.Content** - Contém o conteúdo a ser renderizado no modal quando aberto. <br/>
+
+**Modal.Trigger** - Botão que abre o Modal. <br />
+
+```js
+<Modal.Root>
+  <Modal.Content>
+    Você pode colocar qualquer conteúdo aqui e ele se ajustará com o tamanho do
+    modal.
+  </Modal.Content>
+  <Modal.Trigger>
+    Você pode envolver este trigger em qualquer componente, desde esteja dentro
+    de Root e estilizar da sua maneira.
+  </Modal.Trigger>
+</Modal.Root>
+```
+
+## Props
+
+Componente Modal possui algumas props para modificação.
+
+| Prop  | type               |
+| ----- | ------------------ |
+| Size  | "sm" / "md" / "lg" |
+| layer | Number             |
+
+**layer** - define a camada do modal, se é a primeira ou segunda, utilizamos quando possuimos um modal dentro de outro que possuem o mesmo tamanho (size).
+
+```js
+<Modal.Root>
+  <Modal.Content size="sm" layer={1}>
+    Seu conteudo aqui.
+    <Modal.Root>
+      <Modal.Content size="sm" layer={2}>
+        Seu conteudo aqui.
+      </Modal.Content>
+      <Modal.Trigger>abrir modal</Modal.Trigger>
+    </Modal.Root>
+  </Modal.Content>
+  <Modal.Trigger>abrir modal</Modal.Trigger>
+</Modal.Root>
+```
