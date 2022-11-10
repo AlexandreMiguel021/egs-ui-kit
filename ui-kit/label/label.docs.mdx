@@ -1,0 +1,22 @@
+---
+description: A Label component.
+---
+
+import { Label } from './label'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyles, theme } from '@egssistemas/ui-kit.theme'
+
+Componente Label é utilizado em todos os inputs para manter o padrão dos estilos.
+
+## Uso do componente
+
+```js
+<Label>Hello world!</Label>
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <GlobalStyles />
+  <Label>Hello world!</Label>
+</ThemeProvider>
+```
