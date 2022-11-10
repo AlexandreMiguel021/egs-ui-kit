@@ -1,0 +1,33 @@
+---
+description: A Input component.
+---
+
+import { Input } from './input'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyles, theme } from '@egssistemas/ui-kit.theme'
+
+Componente base de input com 3 "modifiers", sendo eles: padrão, com feedback de erro e de sucesso.
+
+## Uso do componente
+
+Componente Input por si só não é utilizado sozinho, mas contribui para montar um componente maior, como o **TextField**, juntamente com o componente **Label** e **InputError**.
+
+```js
+<Input />
+```
+
+```js live
+<ThemeProvider theme={theme}>
+  <GlobalStyles />
+  <Input />
+</ThemeProvider>
+```
+
+### Props
+
+Componente Botão possui algumas props para modificação.
+
+| Prop        | type                          |
+| ----------- | ----------------------------- |
+| **error**   | boolean                       |
+| **isValid** | id: string; hasValue: boolean |
